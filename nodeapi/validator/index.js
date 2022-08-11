@@ -22,7 +22,6 @@ exports.userSignupValidator = (req, res, next) => {
 
     //check for errors
     const error = req.validationErrors();
-    console.log(error);
 
     //if error show the first one as they happen
     if (error) {
@@ -30,8 +29,7 @@ exports.userSignupValidator = (req, res, next) => {
         return res.status(400).json({ error: firstError });
 
     }
-    //proceed to next middleware
+    //proceed to next middleware to the code
     next();
 
-
-}
+};
