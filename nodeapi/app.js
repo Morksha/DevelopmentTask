@@ -3,7 +3,8 @@ const app = express();
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
-var cookieParser = require('cookie-parser')
+var cookieParser = require('cookie-parser');
+const cors = require('cors');
 const expressValidator = require("express-validator");
 const dotenv = require("dotenv");
 dotenv.config();
@@ -27,6 +28,7 @@ const userRoutes = require("./routes/user");
 
 //middleware
 app.use(morgan("dev"));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(expressValidator());
@@ -41,7 +43,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-//listen to application 
+//listen to application
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
     console.log(`A Node Js API is listening on port: ${port}`);
