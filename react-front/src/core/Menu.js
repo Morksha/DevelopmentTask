@@ -36,7 +36,9 @@ const Menu = ({history}) =>(
   </li>
 
   <li className="nav-item">
-    <a className="nav-link text-white">{isAuthenticated().user.name}</a>
+  <Link to={`/user/${isAuthenticated().user._id}`} style={{color:"#ffffff"}}>
+    <a className="nav-link text-white">{`${isAuthenticated().user.name}'s Profile`}</a>
+    </Link>
   </li>
     </>
 
