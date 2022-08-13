@@ -44,10 +44,10 @@ this.state ={
     });
   };
 
-
-
   signinForm = (email, password) => (
+
     <form>
+
     <div className="form-group">
     <label className="text-muted">Email</label>
     <input
@@ -70,7 +70,9 @@ this.state ={
     <button
     onClick={this.clickSubmit}
     className="btn btn-raised btn-primary">Submit</button>
+
     </form>
+
   )
 
   render(){
